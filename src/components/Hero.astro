@@ -1,14 +1,38 @@
+---
+// src/components/Hero.astro
+import memoryTree from "../assets/memorytree.png";
+---
+
 <section class="hero">
   <div class="hero-background"></div>
+  <div class="hero-image-backdrop">
+    <img
+      src={memoryTree.src}
+      alt="Silhouette profile with tree representing preserved essence and legacy"
+    />
+  </div>
   <div class="container">
-    <div class="hero-content">
-      <h1>Preserve Your Essence Forever</h1>
-      <p class="hero-subtitle">
-        Create a digital legacy that captures who you truly are. Your thoughts,
-        values, and personality—preserved for future generations to know and
-        connect with the real you.
-      </p>
-      <a href="#waitlist" class="cta-button">Reserve Your Digital Legacy</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>To Be Remembered Is To Be</h1>
+        <p class="hero-subtitle">
+          Capture not just your memories, but your essence—the way you think,
+          decide, and see the world. Create a legacy unlike anything that has
+          come before, so future generations can truly discover who you were.
+        </p>
+        <div class="hero-cta">
+          <a href="#get-started" class="btn-primary">Preserve Your Essence</a>
+          <a href="#how-it-works" class="btn-secondary">Discover How</a>
+        </div>
+        <p class="hero-note">
+          ✓ Your mind, not just your memories &nbsp;&nbsp; ✓ Data you own
+          forever &nbsp;&nbsp; ✓ A legacy without precedent
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Elegant visual space that works with the backdrop -->
+      </div>
     </div>
   </div>
 </section>
@@ -18,11 +42,28 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     color: white;
     overflow: hidden;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to right,
+      rgba(15, 23, 42, 0.9) 0%,
+      rgba(15, 23, 42, 0.7) 30%,
+      rgba(15, 23, 42, 0.4) 60%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
   }
 
   .hero-background {
@@ -44,71 +85,186 @@
     animation: subtle-float 20s ease-in-out infinite;
   }
 
+  .hero-image-backdrop {
+    position: absolute;
+    right: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 120%;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-image-backdrop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(1px) brightness(1.2);
+    mask: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      transparent 100%
+    );
+  }
+
   @keyframes subtle-float {
     0%,
     100% {
-      transform: translateY(0px) rotate(0deg);
+      transform: translateY(-50%) rotate(0deg);
     }
     33% {
-      transform: translateY(-10px) rotate(0.5deg);
+      transform: translateY(-52%) rotate(0.3deg);
     }
     66% {
-      transform: translateY(5px) rotate(-0.5deg);
+      transform: translateY(-48%) rotate(-0.3deg);
     }
   }
 
-  .hero-content {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
     position: relative;
-    z-index: 2;
-    max-width: 800px;
-    text-align: center;
-    margin: 0 auto;
+    z-index: 3;
+    width: 100%;
+  }
+
+  .hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 4;
+  }
+
+  .hero-visual {
+    position: relative;
+    z-index: 3;
   }
 
   h1 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #ffffff, #e2e8f0, #cbd5e1);
+    background: linear-gradient(45deg, #ffffff, #f1f5f9, #e2e8f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1.1;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   }
 
   .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    opacity: 0.95;
     line-height: 1.6;
     color: #e2e8f0;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .cta-button {
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
     display: inline-block;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, #dc2626, #991b1b);
     color: white;
     padding: 18px 40px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow:
+      0 10px 30px rgba(220, 38, 38, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  .cta-button:hover {
+  .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 15px 40px rgba(220, 38, 38, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-note {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    color: #cbd5e1;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
-    .cta-button {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero-image-backdrop {
+      right: -15%;
+      width: 70%;
+      opacity: 0.08;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
       width: 100%;
       max-width: 300px;
       text-align: center;
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-image-backdrop {
+      opacity: 0.05;
     }
   }
 </style>
