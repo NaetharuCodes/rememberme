@@ -74,13 +74,182 @@ import Hero from "../components/Hero.astro";
     </div>
   </section>
 
-  <!-- Placeholder for remaining sections -->
-  <section class="coming-soon" id="how-it-works">
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
     <div class="container">
-      <h2>More sections coming...</h2>
-      <p>
-        This is where we'll add How It Works, Pricing, and Get Started sections.
+      <h2>How We Capture Your Essence</h2>
+      <p class="section-subtitle">
+        Through thoughtful conversation and advanced data structuring, we
+        preserve not just what you think, but how you think—ready for whatever
+        AI technology the future brings.
       </p>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Deep Conversations</h3>
+          <p>
+            Guided sessions capture your perspectives, values, decision-making
+            patterns, and the unique way you see the world. We go beyond
+            surface-level questions to understand your essence.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Secure Preservation</h3>
+          <p>
+            Your personality data is encrypted and structured using advanced
+            techniques, creating a comprehensive digital representation while
+            maintaining absolute privacy and security.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Future-Ready Legacy</h3>
+          <p>
+            Your essence is preserved in formats that work with any future AI
+            technology. As AI advances, your legacy becomes more meaningful and
+            interactive.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Privacy Promise Section -->
+  <section class="privacy-section">
+    <div class="container">
+      <div class="privacy-content">
+        <h2>Your Digital Safe Deposit Box</h2>
+        <p class="section-subtitle">
+          We're custodians, not owners. Your essence belongs to you and your
+          family—forever.
+        </p>
+
+        <div class="privacy-grid">
+          <div class="privacy-item">
+            <div class="privacy-icon">🔐</div>
+            <h3>You Own Your Data</h3>
+            <p>
+              This isn't our data to monetize. You own it completely. We're
+              simply the secure custodians of your digital essence.
+            </p>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-icon">🚫</div>
+            <h3>Never Shared, Never Sold</h3>
+            <p>
+              We don't share your data with anyone, ever. No advertisers, no
+              research, no "improving our service." Your privacy is absolute.
+            </p>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-icon">👨‍👩‍👧‍👦</div>
+            <h3>Family Inheritance</h3>
+            <p>
+              You control who gets access and when. Your digital essence passes
+              to your chosen heirs according to your wishes.
+            </p>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-icon">🏛️</div>
+            <h3>Not Big Tech</h3>
+            <p>
+              We're a family legacy service, not a data harvesting company. Our
+              business model is custodial care, not data exploitation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2>Choose Your Legacy Plan</h2>
+      <p class="section-subtitle">
+        Invest in a connection that transcends time. Your essence, preserved for
+        generations.
+      </p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Essential Legacy</h3>
+          <div class="price">£599</div>
+          <div class="price-period">One-time investment</div>
+          <ul class="features-list">
+            <li>Comprehensive personality capture sessions</li>
+            <li>Core values and decision-making mapping</li>
+            <li>Voice and mannerism recording</li>
+            <li>Secure lifetime data storage</li>
+            <li>Single heir designation</li>
+            <li>Basic inheritance planning</li>
+          </ul>
+          <a href="#get-started" class="btn-pricing">Begin Your Legacy</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="popular-badge">Most Comprehensive</div>
+          <h3>Complete Legacy</h3>
+          <div class="price">£1,899</div>
+          <div class="price-period">One-time investment</div>
+          <ul class="features-list">
+            <li>Everything in Essential Legacy</li>
+            <li>Extended personality modeling sessions</li>
+            <li>Contextual memory integration</li>
+            <li>Advanced decision-pattern analysis</li>
+            <li>Multiple heir management</li>
+            <li>Detailed inheritance protocols</li>
+            <li>Annual essence refinements</li>
+            <li>Priority support and updates</li>
+          </ul>
+          <a href="#get-started" class="btn-pricing primary">Choose Complete</a>
+        </div>
+      </div>
+
+      <div class="pricing-note">
+        <p>
+          ✓ No subscription fees ever &nbsp;&nbsp; ✓ Lifetime storage guarantee
+          &nbsp;&nbsp; ✓ Complete data ownership
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section class="cta-section" id="get-started">
+    <div class="container">
+      <h2>Begin Your Eternal Legacy</h2>
+      <p class="cta-subtitle">
+        Join the first generation to preserve their essence for eternity.
+        Limited founding member spots available.
+      </p>
+
+      <form class="waitlist-form" onsubmit="handleWaitlistSubmit(event)">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Reserve Your Legacy</button>
+      </form>
+
+      <div class="cta-benefits">
+        <div class="benefit">
+          <span class="benefit-icon">⚡</span>
+          <span>Founding member pricing</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit-icon">🔒</span>
+          <span>No commitment required</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit-icon">👥</span>
+          <span>Priority access</span>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
@@ -192,6 +361,350 @@ import Hero from "../components/Hero.astro";
     color: #64748b;
   }
 
+  /* How It Works Styles */
+  .how-it-works {
+    padding: 120px 0;
+    background: white;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+
+  .step {
+    background: #f8fafc;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #dc2626, #991b1b);
+  }
+
+  .step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-number {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #dc2626, #991b1b);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin: 0 auto 2rem;
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
+  }
+
+  .step h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .step p {
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  /* Privacy Section Styles */
+  .privacy-section {
+    padding: 120px 0;
+    background: #f8fafc;
+  }
+
+  .privacy-content {
+    text-align: center;
+  }
+
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+  }
+
+  .privacy-item {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .privacy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .privacy-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .privacy-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .privacy-item p {
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  /* Pricing Section Styles */
+  .pricing-section {
+    padding: 120px 0;
+    background: white;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+  }
+
+  .pricing-card.featured {
+    border-color: #dc2626;
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #fefefe 0%, #fafafa 100%);
+  }
+
+  .pricing-card.featured:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #dc2626, #991b1b);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #dc2626;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-period {
+    color: #64748b;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .features-list {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+
+  .features-list li {
+    padding: 0.8rem 0;
+    color: #374151;
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.5;
+  }
+
+  .features-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .btn-pricing {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #e2e8f0;
+    color: #374151;
+    background: white;
+  }
+
+  .btn-pricing:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #dc2626;
+    color: #dc2626;
+  }
+
+  .btn-pricing.primary {
+    background: linear-gradient(45deg, #dc2626, #991b1b);
+    color: white;
+    border-color: #dc2626;
+  }
+
+  .btn-pricing.primary:hover {
+    background: linear-gradient(45deg, #991b1b, #7f1d1d);
+    border-color: #991b1b;
+    color: white;
+  }
+
+  .pricing-note {
+    text-align: center;
+    margin-top: 3rem;
+    color: #64748b;
+    font-size: 0.95rem;
+  }
+
+  /* CTA Section Styles */
+  .cta-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ffffff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #e2e8f0;
+  }
+
+  .waitlist-form {
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .waitlist-form input {
+    flex: 1;
+    padding: 18px 24px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    backdrop-filter: blur(10px);
+  }
+
+  .waitlist-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .waitlist-form input:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .waitlist-form button {
+    background: linear-gradient(45deg, #dc2626, #991b1b);
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+
+  .waitlist-form button:hover {
+    background: linear-gradient(45deg, #991b1b, #7f1d1d);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+  }
+
+  .cta-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+  }
+
+  .benefit-icon {
+    font-size: 1.1rem;
+  }
+
   @media (max-width: 768px) {
     .emphasis {
       padding-left: 1rem;
@@ -201,5 +714,62 @@ import Hero from "../components/Hero.astro";
     .story-text {
       font-size: 1.1rem;
     }
+
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .privacy-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-card.featured {
+      transform: none;
+    }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-10px);
+    }
+
+    .waitlist-form {
+      flex-direction: column;
+    }
+
+    .cta-benefits {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 </style>
+
+<script>
+  function handleWaitlistSubmit(event: any) {
+    event.preventDefault();
+    const email = event.target.querySelector('input[type="email"]').value;
+
+    // Here you would typically send the email to your backend
+    alert(
+      `Thank you! We'll be in touch at ${email} when Eternity Leave launches. Welcome to our founding members.`
+    );
+    event.target.reset();
+  }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
+</script>
