@@ -1,11 +1,326 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Eternity Leave - Preserve Your Legacy Before It's Too Late">
+  <Hero />
+  --- // src/components/Hero.astro ---
+
+  <section class="hero">
+    <div class="hero-background"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Preserve Your Essence Forever</h1>
+        <p class="hero-subtitle">
+          Create a digital legacy that captures who you truly are. Your
+          thoughts, values, and personality—preserved for future generations to
+          know and connect with the real you.
+        </p>
+        <a href="#waitlist" class="cta-button">Reserve Your Digital Legacy</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e293b 50%,
+        #334155 100%
+      );
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+          circle at 20% 80%,
+          rgba(120, 119, 198, 0.1) 0%,
+          transparent 50%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(120, 119, 198, 0.05) 0%,
+          transparent 50%
+        );
+      animation: subtle-float 20s ease-in-out infinite;
+    }
+
+    @keyframes subtle-float {
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      33% {
+        transform: translateY(-10px) rotate(0.5deg);
+      }
+      66% {
+        transform: translateY(5px) rotate(-0.5deg);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(45deg, #ffffff, #e2e8f0, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      color: #e2e8f0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .cta-button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <!-- The Story Section -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-content">
+        <h2>The Questions That Haunt Us</h2>
+        <div class="story-text">
+          <p>
+            When my mother passed away, I realized something heartbreaking: all
+            the conversations we'd never have were gone forever. The advice
+            she'd give about my career, her thoughts on my choices, her wisdom
+            about life—all of it vanished with her.
+          </p>
+          <p>
+            My foster daughter recently lost her mother too. She's facing the
+            same devastating silence. The questions she wants to ask, the
+            guidance she needs—it's all locked away, unreachable.
+          </p>
+          <p class="emphasis">
+            But what if it didn't have to be this way? What if we could capture
+            not just memories, but the essence of who someone is—ready for
+            whatever technology brings next?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution Section -->
+  <section class="solution-section">
+    <div class="container">
+      <h2>Your Digital Safe Deposit Box</h2>
+      <p class="section-subtitle">
+        Eternity Leave captures and securely stores who you are—your thoughts,
+        values, wisdom, and personality— so future generations can truly know
+        you.
+      </p>
+
+      <div class="solution-grid">
+        <div class="solution-item">
+          <div class="solution-icon">🔒</div>
+          <h3>Absolutely Secure</h3>
+          <p>
+            Your data is stored with bank-level security. We're not big tech—we
+            don't share, sell, or profit from your personal information. Ever.
+          </p>
+        </div>
+
+        <div class="solution-item">
+          <div class="solution-icon">👤</div>
+          <h3>You Own Your Data</h3>
+          <p>
+            This isn't our data—it's yours. We're just the custodians. Only you
+            decide who gets access and when.
+          </p>
+        </div>
+
+        <div class="solution-item">
+          <div class="solution-icon">🚀</div>
+          <h3>Future-Ready</h3>
+          <p>
+            We capture your essence in a format that works with any future AI
+            technology. The tech will evolve—your legacy is preserved now.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placeholder for remaining sections -->
+  <section class="coming-soon" id="how-it-works">
+    <div class="container">
+      <h2>More sections coming...</h2>
+      <p>
+        This is where we'll add How It Works, Pricing, and Get Started sections.
+      </p>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .story-section {
+    padding: 120px 0;
+    background: #f8fafc;
+  }
+
+  .story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .story-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #0f172a;
+  }
+
+  .story-text {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #374151;
+  }
+
+  .story-text p {
+    margin-bottom: 2rem;
+  }
+
+  .emphasis {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0f172a;
+    border-left: 4px solid #dc2626;
+    padding-left: 2rem;
+    margin-top: 3rem;
+  }
+
+  .solution-section {
+    padding: 120px 0;
+    background: white;
+  }
+
+  .solution-section h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #0f172a;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 4rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+
+  .solution-item {
+    text-align: center;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .solution-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .solution-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .solution-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .solution-item p {
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  .coming-soon {
+    padding: 120px 0;
+    background: #f8fafc;
+    text-align: center;
+    color: #64748b;
+  }
+
+  @media (max-width: 768px) {
+    .emphasis {
+      padding-left: 1rem;
+      margin-top: 2rem;
+    }
+
+    .story-text {
+      font-size: 1.1rem;
+    }
+  }
+</style>
